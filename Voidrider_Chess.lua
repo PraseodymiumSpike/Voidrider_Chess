@@ -628,7 +628,7 @@ function copy_board(board)
  end
  return board_copy
 end
-function only_update_board(board,starting_square,ending_square) --UPDATING OF CASTLING RIGHTS TO BE ADDED
+function only_update_board(board,starting_square,ending_square)
  --contains only the Board-updating step of update_board
  --does not use io.read()
  --does not handle Promotion; keeps a Pawn as a Pawn
