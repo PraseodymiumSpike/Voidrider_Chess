@@ -167,7 +167,7 @@ function piece_is_attacking_square(board,piece,file,rank)
  --returns true if the Piece is attacking the Square
  --returns false otherwise
  --should only be called for Squares in the 7x9 area
- if piece_on_square(board,file,rank)~=nil and piece.color==piece_on_square(board,file,rank).color then --filters out attacks on pieces of the same color
+ if piece_on_square(board,file,rank)~=nil and piece.color==piece_on_square(board,file,rank).color then --filters out attacks on Pieces of the same color
   return false
  end
  if board[file][rank]=="v" then --filters out attacks on Void Squares
