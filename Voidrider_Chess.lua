@@ -1,4 +1,4 @@
---for Lua 5.4.4
+--for Lua 5.4.8
 --Whether moving a Pawn and its Square sideways counts as a Pawn Move for the 50-Move rule and 75-Move rule is to be determined (it seems that it does).
 --It is currently assumed that a Pawn can only Promote when moving forward, not when moving it and its Square sideways. This is subject to change.
 --Pawn Promotions are currently assumed to be compulsory.
@@ -983,3 +983,4 @@ while true do --gameplay loop
 end
 print("Press Enter to exit.")
 io.read()
+
