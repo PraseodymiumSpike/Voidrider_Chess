@@ -1,6 +1,6 @@
 --for Lua 5.4.8
 --Whether moving a Pawn and its Square sideways counts as a Pawn Move for the 50-Move rule and 75-Move rule is to be determined (it seems that it does).
---It is currently assumed that a Pawn can only Promote when moving forward, not when moving it and its Square sideways. This is subject to change.
+--It is currently assumed that a Pawn can only Promote when moving forward, not when moving it and its Square sideways. This is subject to change. Pawn Promotions being compulsory makes this irrelevant.
 --Pawn Promotions are currently assumed to be compulsory.
 --It is currently assumed that the arrangement of existing versus Void Squares within the 7x9 area must be the same for a repetition of Position to be considered.
 --It is currently assumed that permutations of existing Squares are not counted as different in terms of a repetition of Position
@@ -983,4 +983,5 @@ while true do --gameplay loop
 end
 print("Press Enter to exit.")
 io.read()
+
 
