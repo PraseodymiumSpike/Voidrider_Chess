@@ -1,5 +1,5 @@
-# Voidrider_Chess
-Voidrider Chess
+# Voidrider Chess
+This project is essentially obsolete; I would recommend using Game Courier to play this game instead.
 
 rules of the game and square notation: https://www.chessvariants.com/43.dir/voidrider.html
 
