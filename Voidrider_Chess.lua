@@ -1,6 +1,5 @@
---for Lua 5.4.4
+--for Lua 5.4
 --Whether moving a Pawn and its Square sideways counts as a Pawn Move for the 50-Move rule and 75-Move rule is to be determined (it seems that it does).
---Also to be determined is when exactly a Pawn can Promote (it seems to be only upon reaching the last Square in the File it's in).
 --It is currently assumed that a Pawn can only Promote when moving forward, not when moving it and its Square sideways. This is subject to change.
 --Pawn Promotions are currently assumed to be compulsory.
 --It is currently assumed that the arrangement of existing versus Void Squares within the 7x9 area must be the same for a repetition of Position to be considered.
@@ -237,7 +236,7 @@ function piece_is_attacking_square(board,piece,file,rank)
     return false
    end
   elseif utf8.codepoint(file)-utf8.codepoint(piece.file)==-(rank-piece.rank) and rank>piece.rank then
-   --code for if the Voidrider is White and attacking forwards and to the left or Black and attacking backwards and to the right (TO BE DONE)
+   --code for if the Voidrider is White and attacking forwards and to the left or Black and attacking backwards and to the right
    if rank-piece.rank==1 then
     return true
    elseif voidrider_can_ride_through(board,piece,utf8.char(utf8.codepoint(file)+1),rank-1,"northwest") then
@@ -246,7 +245,7 @@ function piece_is_attacking_square(board,piece,file,rank)
     return false
    end
   elseif utf8.codepoint(file)-utf8.codepoint(piece.file)==-(rank-piece.rank) and rank<piece.rank then
-   --code for if the Voidrider is Black and attacking forwards and to the left or White and attacking backwards and to the right (TO BE DONE)
+   --code for if the Voidrider is Black and attacking forwards and to the left or White and attacking backwards and to the right
    if piece.rank-rank==1 then
     return true
    elseif voidrider_can_ride_through(board,piece,utf8.char(utf8.codepoint(file)-1),rank+1,"southeast") then
@@ -430,7 +429,7 @@ function move_is_physically_possible(board,starting_square,ending_square,player)
    return false
   end
   if moving_piece.type=="Voidrider" then
-   --it is a Voidrider trying to Move (TO BE DONE)
+   --it is a Voidrider trying to Move
    if ending_file==starting_file and ending_rank>starting_rank then
     if voidrider_can_ride_through(board,moving_piece,ending_file,ending_rank,"north") then
      return true
@@ -790,7 +789,7 @@ function boards_repeat(board_1,board_2)
  end
  return true
 end
-function rank_of_last_square_in_file(board,file,player) --TO BE DONE
+function rank_of_last_square_in_file(board,file,player)
  --returns the rank of the last existing square in the file for that player
  --returns nil if the file is empty
  local last_rank=false
@@ -813,7 +812,7 @@ function rank_of_last_square_in_file(board,file,player) --TO BE DONE
   return nil
  end
 end
-function update_board(board,history,starting_square,ending_square,plays_left) --sub-functions to be done(boards_repeat and rank_of_last_square_in_file)
+function update_board(board,history,starting_square,ending_square,plays_left)
  --asks for which Piece to Promote to, if any
  --updates board through pass by reference
  --updates history through pass by reference using copy_board
@@ -998,3 +997,4 @@ while true do --gameplay loop
 end
 print("Press Enter to exit.")
 io.read()
+
